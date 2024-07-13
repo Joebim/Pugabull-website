@@ -146,9 +146,9 @@ export default function Home() {
             <h1 className="font-primary-glow text-[55px] text-center text-orange text-stroke-white">$PUGA - The People’s Coin</h1>
           </div>
           <div className="flex flex-col w-full ">
-            <div className="flex flex-row w-full items-center">
+            <div className="flex flex-row w-full items-center gap-[30px]">
               <CoinIllustration className="absolute pt-[70px] overflow-visible" />
-              <div className="flex-[1] pl-[140px] pt-[20px] flex flex-col gap-[24px]">
+              <div className="flex-[1] pl-[70px] pt-[20px] flex flex-col gap-[24px]">
                 <Card
                   topStyle="rounded-[35px] border-white font-[500] tracking-tight leading-[28px] p-[25px] text-[20px] text-left text-white hover:m-0 duration-150"
                   baseStyle="rounded-[35px] border-white"
