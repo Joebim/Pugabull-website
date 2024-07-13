@@ -24,11 +24,22 @@ import { ReactComponent as CharacterOne } from "../assets/character-one.svg"
 import { ReactComponent as CharacterTwo } from "../assets/character-two.svg"
 import { ReactComponent as CharacterThree } from "../assets/character-three.svg"
 import { ReactComponent as CharacterFour } from "../assets/character-four.svg"
+import { ReactComponent as Arc } from "../assets/arc.svg"
+import StarySky from "../assets/stary-sky.svg"
+import { ReactComponent as PlanetRight } from "../assets/planet-right.svg"
+import { ReactComponent as PlanetLeft } from "../assets/planet-left.svg"
+import { ReactComponent as Nft } from "../assets/nft.svg"
+import { ReactComponent as Stake } from "../assets/stake.svg"
+import { ReactComponent as Games } from "../assets/games.svg"
+import { ReactComponent as PugabullFooter } from "../assets/pugabull-footer.svg"
+import { ReactComponent as FooterIllustration } from "../assets/footer-illustration.svg"
+import { ReactComponent as LoveSmall } from "../assets/love-small.svg"
+import { ReactComponent as Paper } from "../assets/paper.svg"
 import { charityData } from '../data/charityData'
+import { partnerData } from '../data/partnerData'
 import Button from '../components/Button'
 import Slider from '../components/Slider'
 import Card from '../components/Card'
-import CharitySlider from '../components/CharitySlider'
 
 export default function Home() {
 
@@ -47,7 +58,7 @@ export default function Home() {
             <h1 className="text-[80px] text-brown font-primary-glow">Invest In Good</h1>
           </div>
         </div>
-        <div className="w-[50%]"><p className="text-[22px] text-center">A meme coin for good, harnessing laughter and internet culture to fuel positive change</p></div>
+        <div className="w-[50%]"><p className="text-[22px] text-center ">A meme coin for good, harnessing laughter and internet culture to fuel positive change</p></div>
         <div className="">
           <Button
             topStyle="bg-secondary text-[25px] rounded-[15px] font-primary-glow text-primaryLight active:m-0 duration-150 hover:bg-black"
@@ -60,8 +71,21 @@ export default function Home() {
         <div className="relative">
           <div className="absolute bottom-0 ml-[-20px]">
             <div className="relative ">
-              <Slider data={pugaArray} slant="right" className="absolute  mb-[30px]" />
-              <Slider data={pugaArray} slant="left" className="absolute" />
+              <Slider slant="right" className="absolute  mb-[30px]" isStyled={true}>
+                {pugaArray.map((title, id) => (
+                  <>
+                    <p key={id} className="text-[24px] text-white font-bold">{title.text}</p>
+                  </>
+                ))}
+              </Slider>
+              <Slider slant="left" className="absolute" isStyled={true}>
+                {pugaArray.map((title, id) => (
+                  <>
+                    <p key={id} className="text-[24px] text-white font-bold">{title.text}</p>
+                  </>
+                ))}
+              </Slider>
+
             </div>
           </div>
           <Illustration className="" />
@@ -151,14 +175,28 @@ export default function Home() {
         <div className="relative">
           <div className="absolute top-0 ml-[-20px] mt-[-120px] z-[100]">
             <div className="relative ">
-              <CharitySlider data={charityData} slant="right" className="absolute  mb-[45px]" />
-              <CharitySlider data={charityData} slant="left" className="absolute" />
+              <Slider slant="right" className="absolute  mb-[45px]" isStyled={true}>
+                {charityData.map((charity, id) => (
+                  <>
+                    <img key={id} src={charity.img} className="rotate-[-2deg]"></img>
+                  </>
+                ))}
+              </Slider>
+
+              <Slider data={charityData} slant="left" className="absolute" isStyled={true}>
+                {charityData.map((charity, id) => (
+                  <>
+                    <img key={id} src={charity.img} className="rotate-[-2deg]"></img>
+                  </>
+                ))}
+              </Slider>
+
             </div>
           </div>
           <GradientOverlay className="absolute" />
         </div>
 
-        <div className="z-[100] h-full p-[80px] relative flex flex-col gap-[30px]">
+        <div className="z-[101] h-full p-[80px] relative flex flex-col gap-[30px]">
           <DottedLine className="absolute self-center pt-[90px] pl-[50px] overflow-visible" />
           <h1 className="font-primary-glow text-[45px] text-brown flex justify-center">PUGANOMICS</h1>
           <div className="px-[18px] py-[4px] flex flex-row items-center gap-[20px] border-[1px] border-solid border-black rounded-[10px] self-center font-extrabold text-brown">
@@ -181,7 +219,7 @@ export default function Home() {
 
           <div className="flex flex-row gap-[20px] self-center">
             <Button
-              topStyle="bg-green hover:bg-[#51c46a] gap-[10px] text-[25px] rounded-[15px] font-primary-glow text-black active:m-0 duration-150 hover:bg-black"
+              topStyle="bg-green hover:bg-[#51c46a] gap-[10px] text-[25px] rounded-[15px] font-primary-glow text-black active:m-0 duration-150"
               baseStyle="bg-orange rounded-[15px]"
               className="w-[150px] h-[45px]"
               slideTo="top-right"
@@ -191,7 +229,7 @@ export default function Home() {
               <Audit />
             </Button>
             <Button
-              topStyle="bg-primaryDark hover:bg-[#e5a968] gap-[10px] text-[25px] rounded-[15px] font-primary-glow text-black active:m-0 duration-150 hover:bg-black"
+              topStyle="bg-primaryDark hover:bg-[#e5a968] gap-[10px] text-[25px] rounded-[15px] font-primary-glow text-black active:m-0 duration-150"
               baseStyle="bg-white rounded-[15px]"
               className="w-[250px] h-[45px]"
               slideTo="top-right"
@@ -207,58 +245,188 @@ export default function Home() {
         <div className="h-[14vh]"></div>
       </div>
 
-      <div className="relative h-[100vh] bg-black">
+      <div className="relative bg-black flex flex-col w-full items-center">
         <World className="absolute top-0 mt-[-30%] z-[100]" />
 
-        <div className="relative h-full flex justify-center items-center overflow-hidden">
+        <div className="relative h-full w-full flex justify-center items-center overflow-hidden">
           <GradientRoadmap className="absolute" />
-          <div className="">
-            <LineOne />
-          </div>
-          <div className=""><div className="">
-            <p className=""></p>
-            <CharacterOne />
-          </div>
-          </div>
-          <div className="">
-            <LineTwo />
-          </div>
-          <div className="">
-            <div className="">
-              <p className=""></p>
-              <CharacterTwo />
+          <div className="flex flex-col gap-[10px] pt-[320px] px-[150px] z-[100] w-full justify-center">
+            <div className=" flex justify-center">
+              <LineOne className="mr-[230px]" />
+            </div>
+            <div className="flex w-full justify-start mt-[-10%]">
+              <div className="flex flex-col gap-[20px]">
+                <div className="w-[80%]">
+                  <p className="font-primary-glow text-white text-center text-[30px]">The Rise of a Pug</p>
+                </div>
+                <CharacterOne />
+              </div>
+            </div>
+            <div className="flex w-full justify-center mt-[-15%]">
+              <LineTwo />
+            </div>
+            <div className="flex w-full justify-end mt-[-15%]">
+              <div className="flex flex-col gap-[20px]">
+                <div className="w-[70%]">
+                  <p className="font-primary-glow text-white text-center text-[30px]">Pawesome Progress</p>
+                </div>
+                <CharacterTwo />
+              </div>
+            </div>
+            <div className="flex w-full justify-center mt-[-12%]">
+              <LineThree className="mr-[100px]" />
+            </div>
+            <div className="flex w-full justify-start mt-[-15%]">
+              <div className="flex flex-col gap-[20px]">
+                <div className="w-[70%]">
+                  <p className="font-primary-glow text-white text-center text-[30px]">Howling to the Moon</p>
+                </div>
+                <CharacterThree />
+              </div>
+            </div>
+            <div className="flex w-full justify-center mt-[-5%]">
+              <LineFour className="ml-[100px]" />
+            </div>
+            <div className="flex w-full justify-end">
+
+              <div className="flex flex-col gap-[20px] mt-[-20%]">
+                <div className="w-[70%]">
+                  <p className="font-primary-glow text-white text-center text-[30px]">Beyond the Moon</p>
+                </div>
+                <CharacterFour />
+              </div>
             </div>
           </div>
-          <div className="">
-            <LineThree />
+        </div>
+        <div className="h-[250px] w-full"></div>
+
+      </div>
+
+      <div className="relative h-[100vh] flex justify-center">
+        <Arc className="absolute top-0 mt-[-10%] ml-[-2%] overflow-visible" />
+
+        <div className="w-full z-[100] px-[80px] flex flex-col items-center gap-[30px]">
+          <p className="font-primary-glow self-center text-brown text-[60px] mt-[-50px]">OUR PARTNERS</p>
+
+          <div className="w-full py-[50px]">
+            <Slider slant="" isStyled={false}>
+              {partnerData.map((Partner) => (
+                <Card
+                  topStyle="bg-white rounded-[50px] font-[500] flex justify-center items-center tracking-tight leading-[25px] text-[22px] text-left p-[25px] text-black hover:m-0 duration-150"
+                  baseStyle="bg-primaryDark rounded-[50px]"
+                  className="w-[300px] h-[300px]"
+                  slideTo="top-right"
+                  topColor={Partner.topColor}
+                  bottomColor={Partner.bottomColor}
+                  text={Partner.name}
+                  textPosition="bottom"
+                >
+                  <Partner.img />
+                </Card>
+              ))}
+            </Slider>
           </div>
-          <div className="">
-
-            <div className="">
-              <p className=""></p>
-              <CharacterThree />
-            </div>
-          </div>
-          <div className="">
-            <LineFour />
-          </div>
-          <div className="">
-
-            <div className="">
-              <p className=""></p>
-              <CharacterFour />
-            </div>
-          </div>
-
-
-
-
-
-
-
         </div>
       </div>
-    </>
 
+      <div className="relative flex justify-center items-center h-[120vh] overflow-hidden bg-black bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${StarySky})` }}
+      >
+        <div className="absolute h-full w-full flex flex-row justify-between">
+          <PlanetLeft />
+          <PlanetRight />
+        </div>
+
+        <div className="flex flex-col items-center gap-[100px]">
+          <h1 className="font-primary-glow text-white text-[80px]">Coming Soon</h1>
+          <div className="flex flex-row gap-[30px]">
+            <Card
+              topStyle="bg-white rounded-[50px] font-[500] py-[40px] flex flex-col gap-[20px] justify-between items-center tracking-tight leading-[25px] text-[22px] text-left p-[25px] text-black hover:m-0 duration-150"
+              baseStyle="bg-primaryDark rounded-[50px]"
+              className="w-[250px] h-[320px]"
+              slideTo="bottom-right"
+              // topColor={Partner.topColor}
+              // bottomColor={Partner.bottomColor}
+              text="NFT Collection"
+              textPosition="inside"
+
+            >
+              <Nft />
+            </Card>
+            <Card
+              topStyle="bg-white rounded-[50px] font-[500] py-[40px] flex flex-col gap-[20px] justify-between items-center tracking-tight leading-[25px] text-[22px] text-left p-[25px] text-black hover:m-0 duration-150"
+              baseStyle="bg-pink rounded-[50px]"
+              className="w-[250px] h-[320px]"
+              slideTo="bottom-right"
+              // topColor={Partner.topColor}
+              // bottomColor={Partner.bottomColor}
+              text="Staking & Rewards"
+              textPosition="inside"
+            >
+              <Stake />
+            </Card>
+            <Card
+              topStyle="bg-white rounded-[50px] font-[500] pb-[40px] pt-[90px] flex flex-col gap-[20px] justify-between items-center tracking-tight leading-[25px] text-[22px] text-left p-[25px] text-black hover:m-0 duration-150"
+              baseStyle="bg-green rounded-[50px]"
+              className="w-[250px] h-[320px]"
+              slideTo="bottom-right"
+              // topColor={Partner.topColor}
+              // bottomColor={Partner.bottomColor}
+              text="Games"
+              textPosition="inside"
+            >
+              <Games />
+            </Card>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative h-[100vh] pr-[80px]">
+
+        <PugabullFooter className="absolute left-0" />
+        <FooterIllustration className="absolute right-0 mr-[60px]" />
+
+        <div className="relative w-full h-full flex flex-col justify-end items-end z-[100]">
+          <div className="w-[50%] flex flex-col px-[2%] gap-[30px]">
+            <div className="w-full flex flex-col px-[40px]">
+              <p className="self-start font-primary-glow text-brown text-[80px] rotate-[-6deg]">Do Good.</p>
+              <p className="self-end font-primary-glow text-brown text-[80px] mt-[-20px] rotate-[3deg]">Have Fun.</p>
+            </div>
+
+            <div className="w-full flex flex-col items-center gap-[20px]">
+              <div className="">
+                <Button
+                  topStyle="bg-white self-center flex flex-row gap-[20px] px-[10px] items-center text-[25px] rounded-[15px] font-primary-glow text-primaryLight active:m-0 duration-150 hover:bg-green"
+                  baseStyle="bg-pink rounded-[15px]"
+                  className="w-[320px] h-[60px]"
+                  slideTo="top-right"
+                  link="https://solsale.app/presale/E6UMYeypxgbHyuB679QNZDcqxPt6eVskqTv5qoW55nJ2"
+                >
+                  <p className="font-primary-glow text-brown text-[20px]">Join The Pugabull Pack!</p>
+                  <LoveSmall />
+                </Button>
+              </div>
+              <div className="">
+                <Button
+                  topStyle="bg-primaryDark self-center flex flex-row gap-[20px] items-center text-[25px] rounded-[15px] font-primary-glow text-primaryLight active:m-0 duration-150 hover:bg-primaryLight"
+                  baseStyle="bg-secondary rounded-[15px]"
+                  className="w-[250px] h-[50px]"
+                  slideTo="top-right"
+                  link="https://solsale.app/presale/E6UMYeypxgbHyuB679QNZDcqxPt6eVskqTv5qoW55nJ2"
+                >
+                  <p className="font-primary-glow text-brown text-[20px]">Get Whitepaper</p>
+                  <Paper />
+                </Button>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </>
   )
 }
