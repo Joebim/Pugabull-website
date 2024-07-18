@@ -2,6 +2,7 @@ body  {
   background-color: #FFFABC;
   font-family: "Comic Neue", cursive;
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* Gradient background mixin converted to standard CSS */
@@ -29,3 +30,45 @@ body  {
 .text-stroke-white {
   -webkit-text-stroke: 1.5px #ffffff; /* Change the color and size as needed */
 }
+
+
+
+/* .bar .middle {
+  top: 32px;
+  height: 4px;
+  width: 40px;
+  border-radius: 50px;
+  position: absolute;
+  transition: 0.3s ease;
+} */
+
+/* .bar .top {
+  bottom: 13px;
+  height: 4px;
+  width: 25px;
+  border-radius: 50px;
+  position: absolute;
+  transition: 0.3s ease;
+} */
+
+/* input[type="checkbox"]:checked~.bar .top {
+  transform: rotate(-45deg);
+  width: 40px;
+  transform-origin: right;
+  top: 16px;
+  left: -13px;
+
+} */
+/* 
+input[type="checkbox"]:checked~.bar .bottom {
+  transform: rotate(45deg);
+  width: 40px;
+  transform-origin: right;
+  top: 45px;
+  left: -14px;
+} */
+
+/* input[type="checkbox"]:checked~.bar .middle {
+  transform: translateX(20px);
+  opacity: 0;
+} */

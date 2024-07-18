@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin');
+
 export default {
   content: [
     "./index.html",
@@ -34,11 +36,26 @@ export default {
         '0%': { transform: 'translateX(calc(-100px * 7))' },
         '100%': { transform: 'translateX(0)' },
       },
+      loading: {
+        '0%, 100%': {
+          transform: 'scale3d(0.9, 0.9, 0.9)',
+          easing: 'ease-out',
+        },
+        '50%': {
+          transform: 'scale3d(1.2, 1.2, 1.2)',
+          easing: 'ease-in',
+        },
+      },
     },
     animation: {
       scrollForward: 'scrollForward 30s linear infinite',
       scrollBackward: 'scrollBackward 30s linear infinite',
+      loading: 'loading 1s infinite',
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function({ addVariant }) {
+      addVariant('children', '&>*')
+    })
+  ],
 }

@@ -1,20 +1,27 @@
-import React from 'react'
+
+import React, { lazy, Suspense, useEffect } from "react";
 import './App.css'
 import { Route } from 'react-router-dom'
 import { Routes } from 'react-router-dom'
-import Home from './pages/Home'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+const Home = lazy(() => import('./pages/Home'));
+const Navbar = lazy(() => import('./components/Navbar'));
+const Footer = lazy(() => import('./components/Footer.jsx'));
+import { Loader } from "./components/Loader.jsx";
+import FontLoad from "./components/FontLoad.jsx";
 
 function App() {
 
+  FontLoad()
+  
   return (
     <>
-      <Navbar />
+    <Suspense fallback={<Loader/>}>
       <Routes>
         <Route path='/' element={<Home />} />
+        
       </Routes>
-      <Footer />
+    </Suspense>
+
     </>
   )
 }

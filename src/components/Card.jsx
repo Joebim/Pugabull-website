@@ -2,7 +2,6 @@ import React from 'react'
 
 export default function Card(props) {
 
-  console.log('props.cardLabel', props)
 
   return (
     <div className=" flex flex-col gap-[20px] items-center">

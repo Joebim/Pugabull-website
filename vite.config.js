@@ -17,11 +17,11 @@ export default defineConfig({
     include: /\.(js|jsx|ts|tsx)$/,
     exclude: [
       'node_modules/**',
-      'src/assets/coin-illustration.svg', 
-      'src/assets/world.svg', 
-      'src/assets/character-one.svg', 
-      'src/assets/character-two.svg', 
-      'src/assets/character-four.svg', 
+      '/src/assets/coin-illustration.svg', 
+      '/src/assets/world.svg', 
+      '/src/assets/character-one.svg', 
+      '/src/assets/character-two.svg', 
+      '/src/assets/character-four.svg', 
     ],
   }),, svgr()],
 })

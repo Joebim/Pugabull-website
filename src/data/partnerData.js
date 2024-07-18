@@ -9,30 +9,35 @@ export const partnerData = [
         name: "Coin Market Cap",
         img: CoinGecko,
         topColor: "#ffffff",
-        bottomColor: "#FF5EEF"
+        bottomColor: "#FF5EEF",
+        viewBox: "0 0 147 150"
     },
     {
         name: "KUCOIN",
         img: Kucoin,
         topColor: "#000000",
-        bottomColor: "#ffffff"
+        bottomColor: "#ffffff",
+        viewBox: "0 0 126 137"
     },
     {
         name: "BitMart",
         img: Bitmart,
         topColor: "#ffffff",
-        bottomColor: "#97FFAE"
+        bottomColor: "#97FFAE",
+        viewBox: "0 0 134 153"
     },
     {
         name: "MEXC",
         img: Mexc,
         topColor: "#3F3F3F",
-        bottomColor: "#FF5EEF"
+        bottomColor: "#FF5EEF",
+        viewBox: "0 0 198 122"
     },
     {
         name: "Coin Market Cap",
         img: CoinMarketCap,
         topColor: "#2260FF",
-        bottomColor: "#ffffff"
+        bottomColor: "#ffffff",
+        viewBox: "0 0 147 150"
     },
 ]
