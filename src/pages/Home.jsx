@@ -4,7 +4,7 @@ import { ReactComponent as Hands } from "../assets/hands.svg"
 import { ReactComponent as Illustration } from "../assets/landing-illustration.svg"
 import { ReactComponent as Charity } from "../assets/charity.svg"
 import { ReactComponent as Coins } from "../assets/coins.svg"
-import Gradient from "../assets/gradient-background.svg"
+import Gradient from "../assets/gradient-background.jpg"
 import { ReactComponent as CoinIllustration } from "../assets/coin-illustration.svg"
 import { ReactComponent as CoinPair } from "../assets/coin-pair.svg"
 import { ReactComponent as GradientOverlay } from "../assets/gradient-overlay.svg"
@@ -123,8 +123,8 @@ export default function Home() {
             baseStyle="bg-primaryLight rounded-[15px]"
             className="w-[250px] h-[50px]"
             slideTo="top-right"
-            link="https://solsale.app/presale/E6UMYeypxgbHyuB679QNZDcqxPt6eVskqTv5qoW55nJ2"
-          >Buy Presale</Button>
+            // link="https://solsale.app/presale/E6UMYeypxgbHyuB679QNZDcqxPt6eVskqTv5qoW55nJ2"
+          >Presale Soon</Button>
         </div>
         <div className="relative overflow-hidden w-full h-[300px] md:h-[480px] lg:h-[550px] xl:h-[600px]">
           <div className="absolute bottom-0 mb-[-100px] ml-[-20px] w-full z-[100] h-[250px]">
@@ -184,9 +184,9 @@ export default function Home() {
                   baseStyle="bg-primaryLight rounded-[15px]"
                   className="w-full h-[70px]"
                   slideTo="top-left"
-                  link="https://solsale.app/presale/E6UMYeypxgbHyuB679QNZDcqxPt6eVskqTv5qoW55nJ2"
+                  // link="https://solsale.app/presale/E6UMYeypxgbHyuB679QNZDcqxPt6eVskqTv5qoW55nJ2"
                 >
-                  <p className="text-[30px] text-stroke-black">Buy Presale</p>
+                  <p className="text-[30px] text-stroke-black">Presale Soon</p>
                   <Coins />
                 </Button>
               </div>
