@@ -123,8 +123,8 @@ export default function Home() {
             baseStyle="bg-primaryLight rounded-[15px]"
             className="w-[250px] h-[50px]"
             slideTo="top-right"
-            // link="https://solsale.app/presale/E6UMYeypxgbHyuB679QNZDcqxPt6eVskqTv5qoW55nJ2"
-          >Presale Soon</Button>
+            link="http://t.me/pugatoken"
+          >Buy Presale</Button>
         </div>
         <div className="relative overflow-hidden w-full h-[300px] md:h-[480px] lg:h-[550px] xl:h-[600px]">
           <div className="absolute bottom-0 mb-[-100px] ml-[-20px] w-full z-[100] h-[250px]">
@@ -184,9 +184,9 @@ export default function Home() {
                   baseStyle="bg-primaryLight rounded-[15px]"
                   className="w-full h-[70px]"
                   slideTo="top-left"
-                  // link="https://solsale.app/presale/E6UMYeypxgbHyuB679QNZDcqxPt6eVskqTv5qoW55nJ2"
+                  link="http://t.me/pugatoken"
                 >
-                  <p className="text-[30px] text-stroke-black">Presale Soon</p>
+                  <p className="text-[30px] text-stroke-black">Buy Presale</p>
                   <Coins />
                 </Button>
               </div>
